@@ -15,17 +15,17 @@ namespace ReservaDeSalon.Server.Controllers
         {
             SeccionDTO seccionDTO = new SeccionDTO();
 
-            if (login.Correo == "CneAdmin@gmail.com" && login.Password == "Admin")
+            if (login.Correo == "Fray@gmail.com" && login.Password == "1234")
             {
-                seccionDTO.Nombre = "Empleado";
+                seccionDTO.Nombre = "admin";
                 seccionDTO.Correo = login.Correo;
                 seccionDTO.Rol = "Administrador";
             }
             else
             {
-                seccionDTO.Nombre = "Empleado";
+                seccionDTO.Nombre = "empleado";
                 seccionDTO.Correo = login.Correo;
-                seccionDTO.Rol = "Usuario";
+                seccionDTO.Rol = "Empleado";
             }
 
             return StatusCode(StatusCodes.Status200OK, seccionDTO);

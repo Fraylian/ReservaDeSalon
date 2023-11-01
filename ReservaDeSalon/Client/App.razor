@@ -1,7 +1,27 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿﻿@using ReservaDeSalon.Client.Pages
+@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager navManager
+
+
+<CascadingAuthenticationState>
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" > 
+            <NotAuthorized>
+                    @{
+                        if (context.User.Identity?.IsAuthenticated != true)
+                            navManager.NavigateTo("/");
+                        else
+                        {
+                            <p class="alert alert-danger">No esta autorizado para ver esta pagina</p>
+                        }
+                    }
+
+
+            </NotAuthorized>
+            
+            </AuthorizeRouteView>
     </Found>
     <NotFound>
         <PageTitle>Not found</PageTitle>
@@ -10,3 +30,4 @@
         </LayoutView>
     </NotFound>
 </Router>
+</CascadingAuthenticationState>

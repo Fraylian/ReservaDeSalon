@@ -2,6 +2,7 @@
 using System.Text.Json;
 using System.Threading.Tasks;
 using ReservaDeSalon.Shared;
+using System.Text;
 
 namespace ReservaDeSalon.Client.Extensiones
 {

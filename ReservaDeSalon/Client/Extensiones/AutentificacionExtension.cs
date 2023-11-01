@@ -2,7 +2,7 @@
 using Blazored.SessionStorage;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
-using System.Threading.Tasks;
+
 
 namespace ReservaDeSalon.Client.Extensiones
 {
@@ -16,7 +16,7 @@ namespace ReservaDeSalon.Client.Extensiones
             _sessionStorage = sessionStorage;
         }
 
-        public async Task ActualizarEstadoAutenticacion(SeccionDTO sesionUsuario)
+        public async Task ActualizarEstadoAutenticacion(SeccionDTO? sesionUsuario)
         {
             ClaimsPrincipal claimsPrincipal;
 

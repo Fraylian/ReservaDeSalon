@@ -2,6 +2,11 @@
 @using ReservaDeSalon.Shared
 @inject HttpClient Http
 
+
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
+@attribute [Authorize(Roles = "Administrador")]
+
 <PageTitle>Weather forecast</PageTitle>
 
 <h1>Weather forecast</h1>

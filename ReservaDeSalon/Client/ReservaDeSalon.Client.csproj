@@ -7,10 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazored.SessionStorage" Version="2.3.0" />
+    <Content Remove="Pages\CalendarioDeReserva.razor" />
+    <Content Remove="Shared\Authorized.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazored.SessionStorage" Version="2.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="7.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.13" PrivateAssets="all" />
+    <PackageReference Include="Syncfusion.Blazor.FileManager.PhysicalFileProvider" Version="23.1.43" />
+    <PackageReference Include="Syncfusion.PdfToImageConverter.Net" Version="23.1.43" />
   </ItemGroup>
 
   <ItemGroup>
